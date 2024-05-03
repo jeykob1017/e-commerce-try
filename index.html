@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Website</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .container {
+      max-width: 800px;
+    }
+    .btn-cart {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+    .btn-cart:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+    .btn-checkout {
+      background-color: #28a745;
+      border-color: #28a745;
+    }
+    .btn-checkout:hover {
+      background-color: #218838;
+      border-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center">E-Commerce Website</h1>
+    <form id="productForm">
+      <div class="form-group">
+        <label for="productName">Product Name:</label>
+        <input type="text" class="form-control" id="productName" required>
+      </div>
+      <div class="form-group">
+        <label for="productPrice">Price:</label>
+        <input type="number" class="form-control" id="productPrice" required>
+      </div>
+      <div class="form-group">
+        <label for="productImage">Product Image:</label>
+        <input type="file" class="form-control-file" id="productImage" accept="image/*" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Add Product</button>
+    </form>
+
+    <hr>
+
+    <h2>Product List</h2>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Search products..." id="searchInput">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" onclick="searchProducts()">Search</button>
+      </div>
+    </div>
+    <ul id="productList" class="list-group">
+      <!-- Product items will be dynamically added here -->
+    </ul>
+
+    <hr>
+
+    <h2>Shopping Cart</h2>
+    <ul id="cartList" class="list-group">
+      <!-- Cart items will be dynamically added here -->
+    </ul>
+    <button id="checkoutBtn" class="btn btn-success btn-block mt-3" onclick="checkout()">Checkout</button>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
